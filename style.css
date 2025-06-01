@@ -1,28 +1,69 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   line-height: 1.6;
   color: #222;
   background: #fff;
 }
 
-header {
-  background: #1a3c6c;
-  color: white;
+header#home {
+  background: #1f2937;
+  color: #ffffff;
   text-align: center;
-  padding: 4rem 2rem;
+  padding: 6rem 2rem;
 }
 
-header h1 {
+header .name {
   margin: 0;
-  font-size: 3.5rem;
+  font-size: 4rem;
   font-weight: 700;
+  line-height: 1.2;
+  transition: transform 0.2s ease;
 }
 
-header p {
+header .name:hover {
+  transform: scale(1.05);
+}
+
+header p:nth-child(2) {
   margin: 0.5rem 0;
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #d1d5db;
+}
+
+header p:nth-child(2) a {
+  color: #d1d5db;
+  text-decoration: underline;
+}
+
+header p:nth-child(2) a:hover {
+  color: #d1d5db;
+}
+
+header p:not(:nth-child(2)) {
+  margin: 0.5rem auto;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #d1d5db;
+  max-width: 600px;
+}
+
+header .cta {
+  display: inline-block;
+  background: #3b82f6;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  transition: background 0.2s ease;
+}
+
+header .cta:hover {
+  background: #2563eb;
 }
 
 section {
@@ -32,27 +73,9 @@ section {
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   text-align: center;
-  margin-bottom: 2rem;
-}
-
-#about img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto 1.5rem;
-}
-
-#about p {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-}
-
-#projects {
-  background: #f8f8f8;
+  margin-bottom: 1.5rem;
 }
 
 .project {
@@ -64,7 +87,6 @@ h2 {
   max-height: 300px;
   object-fit: cover;
   border-radius: 8px;
-  aspect-ratio: 16 / 9; /* Maintains a consistent aspect ratio */
 }
 
 .project h3 {
@@ -76,6 +98,21 @@ h2 {
   margin: 0;
   font-size: 1rem;
   color: #555;
+}
+
+.project .cta {
+  display: inline-block;
+  background: #1a3c6c;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.project .cta:hover {
+  background: #15305b;
 }
 
 #contact {
@@ -95,25 +132,34 @@ h2 {
 
 /* Responsive Design */
 @media (max-width: 600px) {
-  header h1 {
+  header#home {
+    padding: 3rem 1rem;
+  }
+  header .name {
     font-size: 2.5rem;
   }
-  header p {
-    font-size: 1.2rem;
+  header p:nth-child(2) {
+    font-size: 1rem;
   }
-  h2 {
-    font-size: 1.8rem;
+  header p:not(:nth-child(2)) {
+    font-size: 1rem;
   }
   section {
     padding: 2rem 1rem;
   }
+  h2 {
+    font-size: 1.8rem;
+  }
   .project img {
-    max-height: 200px; /* Smaller height for mobile */
+    max-height: 200px;
   }
 }
 
 @media (max-width: 400px) {
+  header .name {
+    font-size: 2rem;
+  }
   .project img {
-    max-height: 150px; /* Even smaller for very small screens */
+    max-height: 150px;
   }
 }
