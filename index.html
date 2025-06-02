@@ -7,15 +7,19 @@
   <title>Veronica Cheung</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/thumbnail.png">
 </head>
 <body>
   <!-- Hero Section -->
   <header id="home">
-    <div class="name">Hello, I am Veronica Cheung.</div>
+    <div class="name">
+      <span class="name-part1">Hello,</span>
+      <span class="name-part2">I am Veronica Cheung.</span>
+    </div>
     <p>Product Manager at <a href="https://www.royalgreenwich.gov.uk/" target="_blank" rel="noopener">Royal Borough of Greenwich</a>.</p>
     <p>With 6 years in tech, I blend product design, analytics, and strategy to solve real human problems. I love turning complex needs into meaningful, creative, and sustainable solutions.</p>
     <p>Shaped by curiosity. Driven by impact. Rooted in empathy.</p>
-    <a href="#portfolio" class="cta">Portfolio</a>
+    <a href="#portfolio" class="cta">Portfolio <span class="arrow">↓</span></a>
   </header>
 
   <!-- Portfolio Section -->
@@ -23,30 +27,60 @@
     <h2>Portfolio</h2>
     <div class="project">
       <img src="assets/ideation.jpeg" alt="Product Localisation at Lecturio">
-      <h3>Product Localisation at Lecturio</h3>
+      <h3>Product Localisation at <a href="https://www.lecturio.com/" target="_blank" rel="noopener">Lecturio</a></h3>
       <p>Industry: Edtech SaaS, healthcare | Location: Berlin | Role: Product Manager</p>
       <p>This product improvement allowed non-English speaking users to enjoy a full-blown product experience in their preferred language. It successfully increases registration rates, the number of leads, and first-time buyers. This project helped to bridge the language barrier and make our products more accessible to a broader audience on a global scale, ultimately driving growth and success.</p>
       <a href="#ruptly" class="cta">Website Development</a>
     </div>
   </section>
 
-  <!-- Ruptly Website Development Section -->
+  <!-- ruptly Section -->
   <section id="ruptly">
-    <h2>Ruptly Website Development</h2>
     <div class="project">
-      <img src="assets/ruptly.jpg" alt="Ruptly Website Development">
-      <h3>Ruptly Website Development</h3>
+      <img src="assets/ideation.jpeg" alt="Ruptly Website Development">
+      <h3>Website Development at <a href="https://academy.ruptly.tv/" target="_blank" rel="noopener">Ruptly</a></h3>
       <p>Client: Ruptly | Industry: Media | Location: Berlin | Role: UI/UX Designer & Graphic Designer</p>
+      <p>The Know Your Source case study demonstrated my design process for building an interactive website for educational, marketing, and sales purposes. I adopted UX research methods to establish an intuitive content structure and led design workshops to craft the UI/UX design of the website. As digital technologies develop, it is getting more difficult to distinguish what’s real or fake in the news. In many cases, social media functions as a vehicle to spread rumour, propaganda, and inaccurate reporting. Ruptly’s creative team and I created an engaging, interactive website as part of the Know Your Source project to emphasize once again on sourcing as the foundation of reliable journalism.</p>
+      
+      <a href="#sellics" class="cta">Speed Performance Optimisation & Website Migration</a>
+    </div>
+  </section>
+
+  <!-- Sellics Section -->
+  <section id="sellics">
+    <div class="project">
+      <img src="assets/ideation.jpeg" alt="Speed Performance Optimisation & Website Migration">
+      <h3>Speed Performance Optimisation & Website Migration at </h3>
+      <p>Industry: SaaS | Location: Berlin | My role: UIUX & Marketing Designer & Frontend Developer</p>
       <p>The Know Your Source case study demonstrated my design process for building an interactive website for educational, marketing, and sales purposes. I adopted UX research methods to establish an intuitive content structure and led design workshops to craft the UI/UX design of the website.</p>
-      <p>As digital technologies develop, it is getting more difficult to distinguish what’s real or fake in the news. In many cases, social media functions as a vehicle to spread rumour, propaganda, and inaccurate reporting. Ruptly’s creative team and I created an engaging, interactive website as part of the Know Your Source project to emphasize once again on sourcing as the foundation of reliable journalism.</p>
+      <p>Adapting design thinking process and agile working model to improve product’s speed performance and aesthetic. Through understanding the users, defining problem statement and goals, and rounds of prototyping and testing, I created the final product with improved loading time and aesthetic consistency, resulting in higher conversion rate.</p>
+
+      <a href="#website-redesign" class="cta">Website Redesign</a>
+    </div>
+  </section>
+
+  <!-- Website Redesign Section -->
+  <section id="website-redesign">
+    <div class="project">
+      <img src="assets/ideation.jpeg" alt="Website Redesign">
+      <h3>Website Redesign at <a href="https://academy.ruptly.tv/" target="_blank" rel="noopener">Perpetua</a> (formerly Sellics)</h3>
+      <p>Industry: Management Consulting | Location: Berlin | My role: Product Manager, UIUX Designer, Frontend Developer</p>
+      <p>Redesigned the WordPress site that aims to reflect the agency’s unique value proposition and impressive case studies. Created a new branding with a solid story concept.</p>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
-    <h2>Contact</h2>
-    <p><a href="mailto:veronica@veronicacheung.com">Email Me</a></p>
-    <p><a href="https://www.linkedin.com/in/veronica-cheung-pm/" target="_blank" rel="noopener">LinkedIn</a></p>
-  </section>
+    <h2>Don't be stranger</h2>
+  <a href="mailto:veronica@portfolio" class="cta">Email Me</a>
+  <a href="https://www.linkedin.com/in/veronica-cheung-pm/" target="_blank" class="cta" rel="noopener">LinkedIn</a>
+</section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      window.location.hash = '';
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    });
+  </script>
 </body>
 </html>

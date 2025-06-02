@@ -1,142 +1,216 @@
+@font-face {
+  font-family: 'Young Serif';
+  src: url('assets/fonts/YoungSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   color: #222;
-  background: #fff;
 }
 
 header#home {
-  background: #1f2937;
-  color: #ffffff;
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(
+    to bottom,
+    #4d7cdb 0%,
+    #4d7cdb 40%,
+    #9dbcd9 70%,
+    #dbcedb 100%
+  );
+  color: #fff;
   text-align: center;
-  padding: 6rem 2rem;
+  padding: 2rem;
+  height: 66.67vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
+
+header#home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  z-index: 0;
+  pointer-events: none;
+}
+
+header#home > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 
 header .name {
   margin: 0;
-  font-size: 4rem;
-  font-weight: 700;
+  font-family: 'Young Serif', serif;
+  font-size: 5rem;
+  font-weight: 500;
   line-height: 1.2;
   transition: transform 0.2s ease;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  white-space: nowrap;
 }
 
 header .name:hover {
-  transform: scale(1.05);
+  transform: none;
+}
+
+header .name-part1,
+header .name-part2 {
+  display: inline;
 }
 
 header p:nth-child(2) {
   margin: 0.5rem 0;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
-  color: #d1d5db;
+  color: #fff;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-header p:nth-child(2) a {
-  color: #d1d5db;
+header p:nth-child(2) a,
+header p:nth-child(2) a:link,
+header p:nth-child(2) a:visited,
+header p:nth-child(2) a:hover,
+header p:nth-child(2) a:active {
+  color: #fff;
   text-decoration: underline;
-}
-
-header p:nth-child(2) a:hover {
-  color: #d1d5db;
+text-decoration-thickness: 2px;
 }
 
 header p:not(:nth-child(2)) {
   margin: 0.5rem auto;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 400;
-  color: #d1d5db;
+  color: #fff;
   max-width: 600px;
 }
 
 header .cta {
-  display: inline-block;
-  background: #3b82f6;
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 0.6rem 1.6rem;
+  border-radius: 999px;
   text-decoration: none;
   font-size: 1rem;
   font-weight: 500;
   margin-top: 1rem;
-  transition: background 0.2s ease;
+  margin-bottom: 0.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease;
 }
 
 header .cta:hover {
-  background: #2563eb;
+  background: #fff;
+  color: #000;
+  transform: scale(1.1);
+}
+
+header .cta .arrow {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+}
+
+header .cta:hover .arrow {
+  color: #000;
 }
 
 section {
   padding: 3rem 2rem;
   max-width: 900px;
-  margin: 0 auto;
+  margin: 0 auto 1rem auto;
 }
 
-h2 {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1.5rem;
+h3 {
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
 }
 
 .project {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .project img {
   width: 100%;
   max-height: 300px;
   object-fit: cover;
-  border-radius: 8px;
-}
-
-.project h3 {
-  margin: 0.5rem 0;
-  font-size: 1.4rem;
+  border-radius: 2rem;
+  height: auto;
 }
 
 .project p {
   margin: 0;
   font-size: 1rem;
-  color: #555;
+  color: #333;
 }
 
-.project .cta {
+.project .cta, #contact .cta {
   display: inline-block;
-  background: #1a3c6c;
-  color: white;
+  background: none;
+  color: #000;
+  border: 2px solid #000;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 999px;
   text-decoration: none;
-  margin-top: 0.5rem;
-  transition: background 0.2s ease;
+  margin: 0.5rem 1rem;
+  transition: all 0.3s ease;
 }
 
-.project .cta:hover {
-  background: #15305b;
+.project .cta:hover, #contact .cta:hover {
+  background: #000;
+  color: #fff;
+  transform: scale(1.1);
 }
 
 #contact {
   text-align: center;
+  padding: 2rem;
 }
 
 #contact a {
-  color: #1a3c6c;
-  text-decoration: none;
   font-size: 1.1rem;
-  margin: 0 1rem;
-}
-
-#contact a:hover {
-  text-decoration: underline;
 }
 
 /* Responsive Design */
+@media (max-width: 800px) {
+  header .name {
+    white-space: normal;
+  }
+  header .name-part1 {
+    display: block;
+  }
+  header .name-part2 {
+    display: block;
+  }
+}
+
 @media (max-width: 600px) {
   header#home {
-    padding: 3rem 1rem;
+    padding: 1rem;
   }
   header .name {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   header p:nth-child(2) {
     font-size: 1rem;
@@ -144,22 +218,35 @@ h2 {
   header p:not(:nth-child(2)) {
     font-size: 1rem;
   }
+  header .cta {
+    margin-bottom: 0.25rem;
+  }
   section {
     padding: 2rem 1rem;
+    margin-bottom: 0.75rem;
   }
-  h2 {
-    font-size: 1.8rem;
+  .project {
+    margin-bottom: 0.75rem;
   }
   .project img {
     max-height: 200px;
+    object-fit: cover;
+    height: auto;
+  }
+  #contact .cta {
+    display: block;
+    margin: 0.5rem auto;
+    width: fit-content;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 400px) {underline
   header .name {
     font-size: 2rem;
   }
   .project img {
     max-height: 150px;
+    object-fit: cover;
+    height: auto;
   }
 }
