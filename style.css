@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Lato';
+  src: url('assets/Lato-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -14,6 +21,12 @@ body {
   font-family: 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   color: #222;
+  background-color: #f9f5df;
+}
+
+p {
+  color: #353535;
+  font-family: 'Lato', 'Helvetica Neue', sans-serif;
 }
 
 header#home {
@@ -36,6 +49,11 @@ header#home {
   overflow: hidden;
 }
 
+header p {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
 header#home::before {
   content: '';
   position: absolute;
@@ -50,8 +68,6 @@ header#home > * {
   position: relative;
   z-index: 1;
 }
-
-
 
 header .name {
   margin: 0;
@@ -77,9 +93,7 @@ header .name-part2 {
 
 header p:nth-child(2) {
   margin: 0.5rem 0;
-  font-size: 1rem;
   font-weight: 400;
-  color: #fff;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -92,14 +106,12 @@ header p:nth-child(2) a:hover,
 header p:nth-child(2) a:active {
   color: #fff;
   text-decoration: underline;
-text-decoration-thickness: 2px;
+  text-decoration-thickness: 2px;
 }
 
 header p:not(:nth-child(2)) {
   margin: 0.5rem auto;
-  font-size: 1rem;
   font-weight: 400;
-  color: #fff;
   max-width: 600px;
 }
 
@@ -123,7 +135,7 @@ header .cta {
 
 header .cta:hover {
   background: #fff;
-  color: #000;
+  color: #353535;
   transform: scale(1.1);
 }
 
@@ -133,7 +145,7 @@ header .cta .arrow {
 }
 
 header .cta:hover .arrow {
-  color: #000;
+  color: #353535;
 }
 
 section {
@@ -143,8 +155,17 @@ section {
 }
 
 h3 {
-  font-size: 1.4rem;
+  font-size: 2rem;
   margin: 0.5rem 0;
+}
+
+h3 a {
+  color: #222;
+  text-decoration: underline;
+}
+
+h3 a:hover {
+  font-weight: bold;
 }
 
 .project {
@@ -153,16 +174,25 @@ h3 {
 
 .project img {
   width: 100%;
-  max-height: 300px;
+  max-height: 360px;
   object-fit: cover;
-  border-radius: 2rem;
+  border-radius: 1rem;
   height: auto;
 }
 
 .project p {
   margin: 0;
-  font-size: 1rem;
-  color: #333;
+  font-size: 1.2rem;
+}
+
+.project p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.project .cta {
+  display: block;
+  margin: 0.5rem 0;
+  text-align: left;
 }
 
 .project .cta, #contact .cta {
@@ -173,7 +203,8 @@ h3 {
   padding: 0.5rem 1rem;
   border-radius: 999px;
   text-decoration: none;
-  margin: 0.5rem 1rem;
+  font-size: 1rem;
+  margin: 0.5rem 0;
   transition: all 0.3s ease;
 }
 
@@ -189,7 +220,7 @@ h3 {
 }
 
 #contact a {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 /* Responsive Design */
@@ -208,15 +239,16 @@ h3 {
 @media (max-width: 600px) {
   header#home {
     padding: 1rem;
+    height: auto;
   }
   header .name {
     font-size: 2rem;
   }
   header p:nth-child(2) {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   header p:not(:nth-child(2)) {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   header .cta {
     margin-bottom: 0.25rem;
@@ -229,9 +261,9 @@ h3 {
     margin-bottom: 0.75rem;
   }
   .project img {
-    max-height: 200px;
-    object-fit: cover;
+    max-height: 240px;
     height: auto;
+    object-fit: cover;
   }
   #contact .cta {
     display: block;
@@ -240,13 +272,13 @@ h3 {
   }
 }
 
-@media (max-width: 400px) {underline
+@media (max-width: 400px) {
   header .name {
     font-size: 2rem;
   }
   .project img {
-    max-height: 150px;
-    object-fit: cover;
+    max-height: 180px;
     height: auto;
+    object-fit: cover;
   }
 }
